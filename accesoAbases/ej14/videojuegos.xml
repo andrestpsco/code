@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<videojuegos>
+    <videojuego>
+        <titulo>The Legend of Zelda: Breath of the Wild</titulo>
+        <anyo>2017</anyo>
+        <desarrollador>Nintendo</desarrollador>
+        <genero>Aventura</genero>
+        <plataformas>
+            <plataforma>Switch</plataforma>
+            <plataforma>Wii U</plataforma>
+        </plataformas>
+    </videojuego>
+    <videojuego>
+        <titulo>Hollow Knight</titulo>
+        <anyo>2017</anyo>
+        <desarrollador>Team Cherry</desarrollador>
+        <genero>Metroidvania</genero>
+        <plataformas>
+            <plataforma>PC</plataforma>
+            <plataforma>Switch</plataforma>
+            <plataforma>PlayStation 4</plataforma>
+        </plataformas>
+    </videojuego>
+    <videojuego>
+        <titulo>Celeste</titulo>
+        <anyo>2018</anyo>
+        <desarrollador>Maddy Makes Games</desarrollador>
+        <genero>Plataformas</genero>
+        <plataformas>
+            <plataforma>PC</plataforma>
+            <plataforma>Switch</plataforma>
+        </plataformas>
+    </videojuego>
+</videojuegos>

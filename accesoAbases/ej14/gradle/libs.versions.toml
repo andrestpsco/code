@@ -4,7 +4,11 @@
 [versions]
 guava = "33.5.0-jre"
 junit-jupiter = "6.0.1"
+jaxb-api = "4.0.2"
+jaxb-runtime = "4.0.5"
 
 [libraries]
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+jaxb-api = { module = "jakarta.xml.bind:jakarta.xml.bind-api", version.ref = "jaxb-api" }
+jaxb-runtime = { module = "org.glassfish.jaxb:jaxb-runtime", version.ref = "jaxb-runtime" }

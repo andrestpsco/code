@@ -23,6 +23,8 @@ dependencies {
 
     // This dependency is used by the application.
     implementation libs.guava
+    implementation libs.jaxb.api
+    implementation libs.jaxb.runtime
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -34,7 +36,11 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'code.App'
+    mainClass = 'code.Main'
+}
+
+tasks.named('run') {
+    standardInput = System.in
 }
 
 tasks.named('test') {

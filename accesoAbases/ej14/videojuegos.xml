@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <videojuegos>
     <videojuego>
-        <titulo>The Legend of Zelda: Breath of the Wild</titulo>
         <anyo>2017</anyo>
         <desarrollador>Nintendo</desarrollador>
         <genero>Aventura</genero>
@@ -9,9 +8,9 @@
             <plataforma>Switch</plataforma>
             <plataforma>Wii U</plataforma>
         </plataformas>
+        <titulo>The Legend of Zelda: Breath of the Wild</titulo>
     </videojuego>
     <videojuego>
-        <titulo>Hollow Knight</titulo>
         <anyo>2017</anyo>
         <desarrollador>Team Cherry</desarrollador>
         <genero>Metroidvania</genero>
@@ -20,15 +19,17 @@
             <plataforma>Switch</plataforma>
             <plataforma>PlayStation 4</plataforma>
         </plataformas>
+        <titulo>Hollow Knight</titulo>
     </videojuego>
     <videojuego>
-        <titulo>Celeste</titulo>
-        <anyo>2018</anyo>
-        <desarrollador>Maddy Makes Games</desarrollador>
-        <genero>Plataformas</genero>
+        <anyo>2024</anyo>
+        <desarrollador>Capcom</desarrollador>
+        <genero>Lucha</genero>
         <plataformas>
-            <plataforma>PC</plataforma>
-            <plataforma>Switch</plataforma>
+            <plataforma>PS4</plataforma>
+            <plataforma>Switch 2</plataforma>
+            <plataforma>XBOX One</plataforma>
         </plataformas>
+        <titulo>Street Fighter 6</titulo>
     </videojuego>
 </videojuegos>

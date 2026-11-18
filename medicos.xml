@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medicos>
+    <medico numeroDoctor="1">
+        <nombre>Dr. House</nombre>
+        <especialidad>Diagnóstico</especialidad>
+        <anosExperiencia>20</anosExperiencia>
+    </medico>
+    <medico numeroDoctor="2">
+        <nombre>Dra. Grey</nombre>
+        <especialidad>Cirugía</especialidad>
+        <anosExperiencia>10</anosExperiencia>
+    </medico>
+</medicos>

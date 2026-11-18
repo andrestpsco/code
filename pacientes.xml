@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pacientes>
+    <paciente>
+        <ciudad>Benicarló</ciudad>
+        <doctor>1</doctor>
+        <fechaNacimiento>1995-05-12</fechaNacimiento>
+        <nombre>Juan Pérez</nombre>
+    </paciente>
+    <paciente>
+        <ciudad>Vinaròs</ciudad>
+        <doctor>1</doctor>
+        <fechaNacimiento>1988-10-22</fechaNacimiento>
+        <nombre>María López</nombre>
+    </paciente>
+    <paciente>
+        <ciudad>Castellón</ciudad>
+        <doctor>2</doctor>
+        <fechaNacimiento>2000-01-15</fechaNacimiento>
+        <nombre>Carlos Ruiz</nombre>
+    </paciente>
+    <paciente DNI="1212122343">
+        <ciudad>Barcelona</ciudad>
+        <doctor>2</doctor>
+        <fechaNacimiento>20/43/5333</fechaNacimiento>
+        <nombre>Alonso</nombre>
+    </paciente>
+</pacientes>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<centros>
+   
+    <centro id="1">
+        <nombre>IES Joan Coromines</nombre>
+        <ciudad>Benicarló</ciudad>
+        <direccion>Av. de Catalunya, 45</direccion>
+        <codigoPostal>12500</codigoPostal>
+        <profesores>
+            <profesor>
+                <nombre>Ana Pérez</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Programación</asignatura>
+                    <asignatura>Bases de Datos</asignatura>
+                    <asignatura>Sistemas Informáticos</asignatura>
+                </asignaturas>
+            </profesor>
+            <profesor>
+                <nombre>Carlos Gómez</nombre>
+                <departamento>Matemáticas</departamento>
+                <asignaturas>
+                    <asignatura>Matemáticas I</asignatura>
+                    <asignatura>Matemáticas II</asignatura>
+                </asignaturas>
+            </profesor>
+            <profesor>
+                <nombre>Laura Martí</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Entornos de Desarrollo</asignatura>
+                    <asignatura>Programación Multimedia</asignatura>
+                </asignaturas>
+            </profesor>
+        </profesores>
+    </centro>
+
+    <centro id="2">
+        <nombre>IES Ribalta</nombre>
+        <ciudad>Castellón de la Plana</ciudad>
+        <direccion>Av. Rei En Jaume, 12</direccion>
+        <codigoPostal>12001</codigoPostal>
+        <profesores>
+            <profesor>
+                <nombre>Jorge Blasco</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Redes de Área Local</asignatura>
+                    <asignatura>Seguridad Informática</asignatura>
+                </asignaturas>
+            </profesor>
+            <profesor>
+                <nombre>Marta Sánchez</nombre>
+                <departamento>Física y Química</departamento>
+                <asignaturas>
+                    <asignatura>Física</asignatura>
+                    <asignatura>Química</asignatura>
+                </asignaturas>
+            </profesor>
+        </profesores>
+    </centro>
+
+
+    <centro id="3">
+        <nombre>IES Luis Vives</nombre>
+        <ciudad>Valencia</ciudad>
+        <direccion>Carrer de San Vicente Mártir, 40</direccion>
+        <codigoPostal>46002</codigoPostal>
+        <profesores>
+            <profesor>
+                <nombre>David Soriano</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Acceso a Datos</asignatura>
+                    <asignatura>Desarrollo de Interfaces</asignatura>
+                    <asignatura>Servicios y Procesos</asignatura>
+                </asignaturas>
+            </profesor>
+            <profesor>
+                <nombre>Sofía Navarro</nombre>
+                <departamento>Inglés</departamento>
+                <asignaturas>
+                    <asignatura>Inglés Técnico</asignatura>
+                </asignaturas>
+            </profesor>
+            <profesor>
+                <nombre>Héctor Mollà</nombre>
+                <departamento>Informática</departamento>
+                <asignaturas>
+                    <asignatura>Sistemas de Gestión Empresarial</asignatura>
+                    <asignatura>Programación</asignatura>
+                </asignaturas>
+            </profesor>
+        </profesores>
+    </centro>
+</centros>

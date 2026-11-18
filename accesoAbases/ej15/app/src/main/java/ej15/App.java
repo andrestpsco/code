@@ -3,12 +3,74 @@
  */
 package ej15;
 
+import java.io.File;
+import java.util.ArrayList;
+
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public static ArrayList<Centro> cargarDatosCentro(File archivo) {
+        if (archivo == null || !archivo.isFile()) {
+            System.err.println("No se encontró el archivo centros.xml.");
+            return null;
+        }
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(CentroListWrapper.class);
+            Unmarshaller um = context.createUnmarshaller();
+            CentroListWrapper wrapper = (CentroListWrapper) um.unmarshal(archivo);
+
+            if (wrapper == null || wrapper.getCentros() == null) {
+                return new ArrayList<>();
+            }
+            return new ArrayList<>(wrapper.getCentros());
+        } catch (JAXBException e) {
+            System.err.println("No se pudieron leer los datos XML: " + e.getMessage());
+            return null;
+        }
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        File archivoXML = new File("centros.xml");
+        if (!archivoXML.isFile()) {
+            archivoXML = new File("../centros.xml");
+        }
+        ArrayList<Centro> listaCentros = cargarDatosCentro(archivoXML);
+
+        if (listaCentros == null){
+            System.out.println("Error al cargar los datos.");
+            return;
+        }
+        int contadorInformatica = 0;
+
+        System.out.println("=== Mostrando datos de los centros ===");
+        for (Centro centro : listaCentros) {
+            System.out.println("Centro ID: " + centro.getId()
+                    + " | Nombre: " + centro.getNombre()
+                    + " | Ciudad: " + centro.getCiudad());
+
+            if (centro.getProfesores() != null) {
+                for (Profesor prof : centro.getProfesores()) {
+                    System.out.println(" Profesor: " + prof.getNombre() + " |Departamento: " + prof.getDepartamento());
+
+                    if (prof.getDepartamento() != null
+                            && prof.getDepartamento().equalsIgnoreCase("Informática")) {
+                        contadorInformatica++;
+                    }
+
+                    System.out.println("Asignaturas:");
+                    if (prof.getAsignaturas() != null) {
+                        for (String asig : prof.getAsignaturas()) {
+                            System.out.println(asig);
+                        }
+                    }
+                    System.out.println();
+                }
+            }
+        }
+
+        System.out.println("Total de profesores del departamento de Informática: " + contadorInformatica);
     }
 }

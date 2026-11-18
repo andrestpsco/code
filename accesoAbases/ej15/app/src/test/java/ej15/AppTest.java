@@ -3,12 +3,21 @@
  */
 package ej15;
 
+import java.io.File;
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    @Test void loadsCentrosFromXml() {
+        ArrayList<Centro> centros = App.cargarDatosCentro(new File("../centros.xml"));
+
+        assertNotNull(centros);
+        assertEquals(3, centros.size());
+        assertEquals(5L, centros.stream()
+                .flatMap(centro -> centro.getProfesores().stream())
+                .filter(profesor -> "Informática".equals(profesor.getDepartamento()))
+                .count());
     }
 }

@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void loadsCentrosFromXml() {
-        ArrayList<Centro> centros = App.cargarDatosCentro(new File("../centros.xml"));
+        ArrayList<Centro> centros = App.cargarDatosCentro(buscarCentrosXml());
 
         assertNotNull(centros);
         assertEquals(3, centros.size());
@@ -19,5 +19,19 @@ class AppTest {
                 .flatMap(centro -> centro.getProfesores().stream())
                 .filter(profesor -> "Informática".equals(profesor.getDepartamento()))
                 .count());
+    }
+
+    private static File buscarCentrosXml() {
+        File[] candidatos = {
+            new File("../centros.xml"),
+            new File("../../centros.xml"),
+            new File("../../../centros.xml")
+        };
+        for (File candidato : candidatos) {
+            if (candidato.isFile()) {
+                return candidato;
+            }
+        }
+        return candidatos[0];
     }
 }

@@ -2,7 +2,6 @@ package code;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import jakarta.xml.bind.JAXBContext;
@@ -57,79 +56,80 @@ public class Main {
         }
 
         ArrayList<Videojuego> videojuegos = loadVideojuegosFromFile(archivo);
-        Scanner teclado = new Scanner(System.in);
         String opcion = "";
 
-        while (!opcion.equals("0")) {
-            System.out.print("1. Mostrar  2. Insertar  3. Eliminar  0. Salir: ");
-            opcion = teclado.nextLine();
+        try (Scanner teclado = new Scanner(System.in)) {
+            while (!opcion.equals("0")) {
+                System.out.print("1. Mostrar  2. Insertar  3. Eliminar  0. Salir: ");
+                opcion = teclado.nextLine();
 
-            switch (opcion) {
-                case "1":
-                    for (Videojuego v : videojuegos) {
-                        System.out.println(v.getTitulo() + " - " + v.getAnyo() + " - "
-                                + v.getDesarrollador() + " - " + v.getGenero()
-                                + " - " + v.getPlataformas());
-                        for (String plataforma : v.getPlataformas()) {
-                            System.out.println(" Plataforma: " + plataforma);
+                switch (opcion) {
+                    case "1":
+                        for (Videojuego v : videojuegos) {
+                            System.out.println(v.getTitulo() + " - " + v.getAnyo() + " - "
+                                    + v.getDesarrollador() + " - " + v.getGenero()
+                                    + " - " + v.getPlataformas());
+                            for (String plataforma : v.getPlataformas()) {
+                                System.out.println(" Plataforma: " + plataforma);
+                            }
                         }
-                    }
-                    break;
+                        break;
 
-                case "2":
-                    Videojuego nuevo = new Videojuego();
+                    case "2":
+                        Videojuego nuevo = new Videojuego();
 
-                    System.out.print("Titulo: ");
-                    nuevo.setTitulo(teclado.nextLine());
-                    System.out.print("Año de lanzamiento: ");
-                    nuevo.setAnyo(Integer.parseInt(teclado.nextLine().trim()));
-                    System.out.print("Desarrollador: ");
-                    nuevo.setDesarrollador(teclado.nextLine());
-                    System.out.print("Género: ");
-                    nuevo.setGenero(teclado.nextLine());
+                        System.out.print("Titulo: ");
+                        nuevo.setTitulo(teclado.nextLine());
+                        System.out.print("Año de lanzamiento: ");
+                        nuevo.setAnyo(Integer.parseInt(teclado.nextLine().trim()));
+                        System.out.print("Desarrollador: ");
+                        nuevo.setDesarrollador(teclado.nextLine());
+                        System.out.print("Género: ");
+                        nuevo.setGenero(teclado.nextLine());
 
-                    ArrayList<String> plataformas = new ArrayList<>();
-                    while (true) {
-                        System.out.print("Plataforma (dejar en blanco para terminar): ");
-                        String plataforma = teclado.nextLine();
-                        if (plataforma.isBlank()) {
-                            break;
+                        ArrayList<String> plataformas = new ArrayList<>();
+                        while (true) {
+                            System.out.print("Plataforma (dejar en blanco para terminar): ");
+                            String plataforma = teclado.nextLine();
+                            if (plataforma.isBlank()) {
+                                break;
+                            }
+                            plataformas.add(plataforma);
                         }
-                        plataformas.add(plataforma);
-                    }
-                    nuevo.setPlataformas(plataformas);
+                        nuevo.setPlataformas(plataformas);
 
-                    videojuegos.add(nuevo);
-                    saveVideojuegosToFile(archivo, videojuegos);
-                    System.out.println("Videojuego añadido correctamente.");
-                    break;
-
-                case "3":
-                    System.out.print("Introduce el título del videojuego a eliminar: ");
-                    String titulo = teclado.nextLine();
-                    boolean encontrado = false;
-
-                    for (int i = 0; i < videojuegos.size(); i++) {
-                        if (videojuegos.get(i).getTitulo().equalsIgnoreCase(titulo)) {
-                            videojuegos.remove(i);
-                            encontrado = true;
-                            break;
-                        }
-                    }
-                    if (encontrado) {
+                        videojuegos.add(nuevo);
                         saveVideojuegosToFile(archivo, videojuegos);
-                        System.out.println("Videojuego eliminado correctamente.");
-                    } else {
-                        System.out.println("No se encontró ningún videojuego con ese título.");
-                    }
-                    break;
+                        System.out.println("Videojuego añadido correctamente.");
+                        break;
 
-                case "0":
-                    System.out.println("Saliendo del programa...");
-                    break;
+                    case "3":
+                        System.out.print("Introduce el título del videojuego a eliminar: ");
+                        String titulo = teclado.nextLine();
+                        boolean encontrado = false;
 
-                default:
-                    System.out.println("Opción no válida. Por favor, elige una opción del 0 al 3.");
+                        for (int i = 0; i < videojuegos.size(); i++) {
+                            if (videojuegos.get(i).getTitulo().equalsIgnoreCase(titulo)) {
+                                videojuegos.remove(i);
+                                encontrado = true;
+                                break;
+                            }
+                        }
+                        if (encontrado) {
+                            saveVideojuegosToFile(archivo, videojuegos);
+                            System.out.println("Videojuego eliminado correctamente.");
+                        } else {
+                            System.out.println("No se encontró ningún videojuego con ese título.");
+                        }
+                        break;
+
+                    case "0":
+                        System.out.println("Saliendo del programa...");
+                        break;
+
+                    default:
+                        System.out.println("Opción no válida. Por favor, elige una opción del 0 al 3.");
+                }
             }
         }
     }

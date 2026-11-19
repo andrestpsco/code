@@ -63,15 +63,15 @@ public class App {
             return;
         }
         int opcion;
-        do{ 
-        System.out.println("Menú");
-        System.out.println("\n1. Mostrar los pacientes de cada médico");
-        System.out.println("\n2. Buscar un paciente por nombre");
-        System.out.println("\n3. Insertar un nuevo paciente");
-        System.out.println("\n4. Salir");
-        
-        Scanner scanner = new Scanner(System.in);
-        opcion = scanner.nextInt();
+        try (Scanner scanner = new Scanner(System.in)) {
+            do {
+                System.out.println("Menú");
+                System.out.println("\n1. Mostrar los pacientes de cada médico");
+                System.out.println("\n2. Buscar un paciente por nombre");
+                System.out.println("\n3. Insertar un nuevo paciente");
+                System.out.println("\n4. Salir");
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar el buffer del scanner
 
         switch (opcion){
 
@@ -187,7 +187,7 @@ public class App {
             System.out.println("Error: El número de doctor introducido no existe. No se puede realizar la inserción.");
         }
 
-         scanner.close();
+        
          break;
          default:
         System.out.println("introduzca un numero válido");
@@ -195,7 +195,8 @@ public class App {
         
     }
 
-    }while(opcion!=4);
+            } while (opcion != 4);
+        }
     
 }
 }
